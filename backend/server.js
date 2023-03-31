@@ -7,17 +7,12 @@ const cors = require("cors");
 
 const app = express();
 
-// Set the Access-Control-Allow-Origin header
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "https://task-master-ojj3.onrender.com");
-  next();
-});
-
 // Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors({  
-  origin: ["https://task-master-ojj3.onrender.com","https://task-master-api-vnxh.onrender.com"]
+  origin: ["https://task-master.onrender.com","https://task-master-api-vnxh.onrender.com",
+           "https://task-master-ojj3.onrender.com","https://task-master-350012.web.app"],
 })); //cors need to be on before routes
 
 app.use("/api/tasks",taskRoutes);
