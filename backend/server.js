@@ -11,8 +11,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors({  
-  origin: ["https://task-master.onrender.com","https://task-master-api-vnxh.onrender.com",
-           "https://task-master-ojj3.onrender.com","https://task-master-350012.web.app"],
+  origin: ["http://localhost:3000", "https://task-master-ojj3.onrender.com"]
 })); //cors need to be on before routes
 
 app.use("/api/tasks",taskRoutes);
