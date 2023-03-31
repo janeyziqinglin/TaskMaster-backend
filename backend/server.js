@@ -10,9 +10,9 @@ const app = express();
 // Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cors(
-{  origin: "https://task-master-ojj3.onrender.com"]}
-)); //cors need to be on before routes
+app.use(cors({  
+  origin: "https://task-master-ojj3.onrender.com"
+})); //cors need to be on before routes
 
 app.use("/api/tasks",taskRoutes);
 
