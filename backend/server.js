@@ -7,6 +7,12 @@ const cors = require("cors");
 
 const app = express();
 
+// Set the Access-Control-Allow-Origin header
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "https://task-master-ojj3.onrender.com");
+  next();
+});
+
 // Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
